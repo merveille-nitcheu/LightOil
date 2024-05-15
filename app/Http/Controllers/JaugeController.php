@@ -116,20 +116,22 @@ class JaugeController extends Controller
 
     public function getCodebyJaugeId($jaugeId)
     {
-        $jauge = Jauge::findOrFail($jaugeId);
-        if($jauge->code == 'ultrasons'){
-            return response()->json([
-                "message" => "Jauge à ultrasons",
-                "response" => true
-            ], 200);
-        }else {
-            return response()->json([
-                "message" => "Autres jauges",
-                "response" => false
-            ], 200);
-        }
+
 
         try {
+
+            $jauge = Jauge::findOrFail($jaugeId);
+            if($jauge->code == 'ultrasons'){
+                return response()->json([
+                    "message" => "Jauge à ultrasons",
+                    "response" => true
+                ], 200);
+            }else {
+                return response()->json([
+                    "message" => "Autres jauges",
+                    "response" => false
+                ], 200);
+            }
 
         } catch (\Throwable $th) {
             return response()->json([

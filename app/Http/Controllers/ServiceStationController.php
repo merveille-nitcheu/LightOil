@@ -149,7 +149,7 @@ class ServiceStationController extends Controller
 
             $remainingnotif->update([
                 'scdp_delay_day' => $request->scdp_delay_day,
-                'critic_limit' => $request->critic_limit,,
+                'critic_limit' => $request->critic_limit,
 
 
 
